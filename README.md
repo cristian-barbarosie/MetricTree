@@ -13,8 +13,8 @@ MetricTree deals well with non uniform clouds of points, that is, with clouds ha
 high density of points along with zones where the points are spread at large distances.
 
 MetricTree has been implemented with the intent of having wide usability.
-It is templated over the type of `Point`s (the metric space) and over a callable
-object returning the square of the distance between any two `Point`s.
+It is templated over the type of points (the metric space) and over a callable
+object returning the square of the distance between any two points.
 However, it needs the touch of someone experienced in the subtleties of C++
 to become a widely usable library in the style of STL.
 Help is welcome.

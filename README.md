@@ -22,6 +22,8 @@ Help is welcome.
 An example of use is described in sections 8.15 and 8.16 of the
 [manual of maniFEM](https://webpages.ciencias.ulisboa.pt/~cabarbarosie/manifem/manual-manifem.pdf).
 
+Copyright 2020 Cristian Barbarosie cristian.barbarosie@gmail.com
+
 MetricTree is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
 the Free Software Foundation, either version 3 of the License, or

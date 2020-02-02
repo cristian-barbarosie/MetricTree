@@ -1,15 +1,15 @@
 
-// maniFEM/metric-tree.h 2020.01.26
+// maniFEM/metric-tree.h 2020.02.01
 
 //    This is MetricTree, a tiny C++ library for hierarchical organization
 //    of a cloud of points in a metric space
 
-//    ManiFEM is free software: you can redistribute it and/or modify
+//    MetricTree is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU Lesser General Public License as published by
 //    the Free Software Foundation, either version 3 of the License, or
 //    (at your option) any later version.
 
-//    ManiFEM is distributed in the hope that it will be useful,
+//    MetricTree is distributed in the hope that it will be useful,
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //    GNU Lesser General Public License for more details.
@@ -19,6 +19,7 @@
 
 //    Copyright 2019, 2020 Cristian Barbarosie cristian.barbarosie@gmail.com
 //    https://github.com/cristian-barbarosie/MetricTree
+
 
 // a cloud, i.e. a set of points in a metric space, organized as a tree
 // similar to m-tree, just not balanced
@@ -109,7 +110,9 @@ class MetricTree
 
 	inline void promote_children_of ( Node * nod );
 
-	void draw_ps ( std::ofstream & );
+	inline size_t nb_of_nodes ()
+	{	if ( root ) return root->nb_of_nodes();
+		return 0;                               }
 
 };  // end of  class MetricTree
 
@@ -199,7 +202,7 @@ class MetricTree<Point,SqDist>::Node
 	void adopt_children_of ( Node * nod, MetricTree * cloud );
 	// the cloud is used as source of information (ratio etc) and is modified
 
-	void draw_arrows ( std::ofstream & );
+	size_t nb_of_nodes ();
 
 };  // end of  class MetricTree::Node
 
@@ -429,44 +432,33 @@ inline std::list < Point > MetricTree<Point,SqDist>::find_close_neighbours_of
 
 //-----------------------------------------------------------------------------------------------//
 
+
 template < typename Point, typename SqDist >
 void MetricTree<Point,SqDist>::Node::get_close_neighbours_of
-( const Point & P, double dd2, std::list < Point > & ll, MetricTree<Point,SqDist> * cloud )
+( const Point & P, double dd, std::list < Point > & ll, MetricTree<Point,SqDist> * cloud )
 
-// return all points in the cloud whose squared distance to P is less than or equal to dd2
+// return all points in the cloud whose distance to P is less than or equal to dd
 
 {	double dist = cloud->get_dist ( this->rank );
 	double range = dist / cloud->range_factor;
 	double sq_d = cloud->squared_distance ( P, this->point );
-	double sum = range + dd2;
+	double sum = range + dd;
 	if ( sq_d > sum * sum ) return;  // P is too far from 'this'
-	if ( sq_d <= dd2 ) ll.push_back ( this->point );
+	if ( sq_d <= dd * dd ) ll.push_back ( this->point );
 	for ( typename std::list<Node*>::const_iterator it = this->children.begin();
 	      it != this->children.end(); it++                                       )
-		(*it)->get_close_neighbours_of ( P, dd2, ll, cloud );                         }
+		(*it)->get_close_neighbours_of ( P, dd, ll, cloud );                         }
 
 //-----------------------------------------------------------------------------------------------//
 
 template < typename Point, typename SqDist >
-void MetricTree<Point,SqDist>::draw_ps ( std::ofstream & ps_file )
+	size_t MetricTree<Point,SqDist>::Node::nb_of_nodes ( )
 
-{	this->root->draw_arrows ( ps_file );
-}
-
-//-----------------------------------------------------------------------------------------------//
-
-template < typename Point, typename SqDist >
-void MetricTree<Point,SqDist>::Node::draw_arrows ( std::ofstream & ps_file )
-
-{	for ( typename std::list<Node*>::const_iterator it = this->children.begin();
+{	size_t res = 1;
+	for ( typename std::list<Node*>::const_iterator it = this->children.begin();
 	      it != this->children.end(); it++                                       )
-	{	double x1 = this->point[0],  y1 = this->point[1],
-		       x2 = (*it)->point[0], y2 = (*it)->point[1];
-		ps_file << x1 << " " << y1 << " moveto ";
-		ps_file << (x1+5*x2)/6. << " " << (y1+5*y2)/6. << " Lineto^ stroke" << std::endl;
-		ps_file << (x1+5*x2)/6. << " " << (y1+5*y2)/6. << " moveto ";
-		ps_file << x2 << " " << y2 << " lineto stroke" << std::endl;			
-		(*it)->draw_arrows ( ps_file );                                                         }  }
+		res += (*it)->nb_of_nodes();
+	return res;                                                                     }
 
 //-----------------------------------------------------------------------------------------------//
 

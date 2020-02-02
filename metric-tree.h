@@ -257,7 +257,7 @@ typename MetricTree<Point,SqDist>::Node * MetricTree<Point,SqDist>::add ( const 
 
 {	MetricTree<Point,SqDist>::Node * N = new MetricTree<Point,SqDist>::Node ( P, 0 );
 	// rank is irrelevant, we give zero, will be set correctly soon
-	this->add(N);  return N;                                                                     }
+	this->add(N);  return N;                                                           }
 
 //-----------------------------------------------------------------------------------------------//
 
@@ -290,10 +290,10 @@ void MetricTree<Point,SqDist>::Node::adopt
 	{	typename MetricTree<Point,SqDist>::Node * child = *it;
 		assert ( child );
 	  child->adopt ( nod, cloud );
-		if ( nod->parent ) return;                                    }
+		if ( nod->parent ) return;                              }
 		// has parent means has been adopted
 	if ( sq_d <= sq_dist )  // yes, 'this' will adopt 'nod'
-		this->raw_adopt ( nod, cloud );                                    }
+		this->raw_adopt ( nod, cloud );                                                 }
 	// else ... sorry, nobody wants noddy :-(
 
 //-----------------------------------------------------------------------------------------------//
@@ -416,7 +416,7 @@ void MetricTree<Point,SqDist>::Node::remove_from
 		if ( this->children.empty() )  {  delete this;  return;  }
 		p->promote ( cloud );  // register new rank !
 		cloud->register_rank ( p->rank );
-	  cloud->promote_children_of ( this );                               }                      }
+	  cloud->promote_children_of ( this );                         }                                }
 
 //-----------------------------------------------------------------------------------------------//
 

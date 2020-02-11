@@ -1,8 +1,11 @@
 
-// maniFEM/metric-tree.h 2020.02.01
+// metric-tree.h 2020.02.09
 
 //    This is MetricTree, a tiny C++ library for hierarchical organization
 //    of a cloud of points in a metric space
+
+//    Copyright 2019, 2020 Cristian Barbarosie cristian.barbarosie@gmail.com
+//    https://github.com/cristian-barbarosie/MetricTree
 
 //    MetricTree is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU Lesser General Public License as published by
@@ -16,9 +19,6 @@
 
 //    You should have received a copy of the GNU Lesser General Public License
 //    along with maniFEM.  If not, see <https://www.gnu.org/licenses/>.
-
-//    Copyright 2019, 2020 Cristian Barbarosie cristian.barbarosie@gmail.com
-//    https://github.com/cristian-barbarosie/MetricTree
 
 
 // a cloud, i.e. a set of points in a metric space, organized as a tree
@@ -55,7 +55,7 @@
 // we prefer to work with squared distance (thus avoiding computing square roots)
 
 // see paragraph 8.15 in the manual of maniFEM
-
+// https://webpages.ciencias.ulisboa.pt/~cabarbarosie/manifem/manual-manifem.pdf
 
 #include <iostream>
 #include <fstream>
@@ -120,7 +120,7 @@ class MetricTree
 
 template < typename Point, typename SqDist >
 inline MetricTree<Point,SqDist>::MetricTree ( SqDist sd, double d0, double r )
-:	squared_distance ( sd ), ratio { r }, dist_rank_zero{ d0 }, sq_dist_rank_zero { d0 * d0 },
+:	squared_distance ( sd ), ratio { r }, dist_rank_zero { d0 }, sq_dist_rank_zero { d0 * d0 },
 	dist_pos_rank ( 1, dist_rank_zero ), dist_neg_rank ( 1, dist_rank_zero ),
 	sq_dist_pos_rank ( 1, sq_dist_rank_zero ), sq_dist_neg_rank ( 1, sq_dist_rank_zero )
 {	}

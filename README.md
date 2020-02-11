@@ -15,8 +15,7 @@ high density of points along with zones where the points are spread at large dis
 MetricTree has been implemented with the intent of having wide usability.
 It is templated over the type of points (the metric space) and over a callable
 object returning the square of the distance between any two points.
-However, it needs the touch of someone experienced in the subtleties of C++
-to become a widely usable library in the style of STL.
+However, it still needs the touch of someone experienced in the subtleties of C++.
 Help is welcome.
 
 An example of use is described in sections 8.15 and 8.16 of the
@@ -35,4 +34,4 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
+along with MetricTree.  If not, see <https://www.gnu.org/licenses/>.

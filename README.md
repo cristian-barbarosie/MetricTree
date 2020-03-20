@@ -18,7 +18,7 @@ object returning the square of the distance between any two points.
 However, it still needs the touch of someone experienced in the subtleties of C++.
 Help is welcome.
 
-An example of use is described in sections 8.15 and 8.16 of the
+An example of use is described in sections 9.15 and 9.16 of the
 [manual of maniFEM](https://webpages.ciencias.ulisboa.pt/~cabarbarosie/manifem/manual-manifem.pdf).
 
 Copyright 2020 Cristian Barbarosie cristian.barbarosie@gmail.com

@@ -33,7 +33,5 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Lesser General Public License for more details.
 
-Full text of the GNU Lesser General Public License is available in files
-[COPYING](https://github.com/cristian-barbarosie/MetricTree/blob/master/COPYING) and 
-[COPYING.LESSER](https://github.com/cristian-barbarosie/MetricTree/blob/master/COPYING.LESSER).
+Full text of the GNU Lesser General Public License is available in files [COPYING](COPYING) and [COPYING.LESSER](COPYING.LESSER).
 Or, see <https://www.gnu.org/licenses/>.

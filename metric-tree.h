@@ -1,24 +1,24 @@
 
 // metric-tree.h 2020.03
 
-//    This is MetricTree, a tiny C++ library for hierarchical organization
-//    of a cloud of points in a metric space.
+//   This is MetricTree, a tiny C++ library for hierarchical organization
+//   of a cloud of points in a metric space.
 
-//    Copyright 2020 Cristian Barbarosie cristian.barbarosie@gmail.com
-//    https://github.com/cristian-barbarosie/MetricTree
+//   Copyright 2020 Cristian Barbarosie cristian.barbarosie@gmail.com
+//   https://github.com/cristian-barbarosie/MetricTree
 
-//    MetricTree is free software: you can redistribute it and/or modify it
-//    under the terms of the GNU Lesser General Public License as published
-//    by the Free Software Foundation, either version 3 of the License
-//    or (at your option) any later version.
+//   MetricTree is free software: you can redistribute it and/or modify it
+//   under the terms of the GNU Lesser General Public License as published
+//   by the Free Software Foundation, either version 3 of the License
+//   or (at your option) any later version.
 
-//    MetricTree is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the implied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-//    See the GNU Lesser General Public License for more details.
+//   MetricTree is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//   See the GNU Lesser General Public License for more details.
 
-//    You should have received a copy of the GNU Lesser General Public License
-//    along with MetricTree.  If not, see <https://www.gnu.org/licenses/>.
+//   You should have received a copy of the GNU Lesser General Public License
+//   along with MetricTree.  If not, see <https://www.gnu.org/licenses/>.
 
 
 // a cloud, i.e. a set of points in a metric space, organized as a tree
@@ -54,8 +54,8 @@
 
 // we prefer to work with squared distance (thus avoiding computing square roots)
 
-// see paragraph 9.15 in the manual of maniFEM
-// https://webpages.ciencias.ulisboa.pt/~cabarbarosie/manifem/manual-manifem.pdf
+// see paragraph 10.15 in the manual of maniFEM
+// http://manifem.rd.ciencias.ulisboa.pt/manual-manifem.pdf
 
 #include <iostream>
 #include <fstream>

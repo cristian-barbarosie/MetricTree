@@ -18,10 +18,10 @@ object returning the square of the distance between any two points.
 However, it still needs the touch of someone experienced in the subtleties of C++.
 Help is welcome.
 
-An example of use is described in sections 10.16 and 10.17 of the
+An example of use is described in sections 11.17 and 11.18 of the
 [manual of maniFEM](http://manifem.rd.ciencias.ulisboa.pt/manual-manifem.pdf).
 
-Copyright 2020 Cristian Barbarosie cristian.barbarosie@gmail.com
+Copyright 2020, 2021 Cristian Barbarosie cristian.barbarosie@gmail.com
 
 MetricTree is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by

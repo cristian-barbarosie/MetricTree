@@ -1,5 +1,5 @@
 
-// metric-tree.h 2021.06.13
+// metric-tree.h 2021.06.18
 
 //   This is MetricTree, a tiny C++ library for hierarchical organization
 //   of a cloud of points in a metric space.
@@ -54,7 +54,7 @@
 
 // we prefer to work with squared distance (thus avoiding computing square roots)
 
-// see paragraph 11.17 in the manual of maniFEM
+// see paragraph 12.10 in the manual of maniFEM
 // https://webpages.ciencias.ulisboa.pt/~cabarbarosie/manifem/manual-manifem.pdf
 
 #include <iostream>

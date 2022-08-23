@@ -1,3 +1,10 @@
+# Give Up GitHub
+
+This project has given up GitHub.
+(See [Software Freedom Conservancy](https://sfconservancy.org/)'s [*Give Up  GitHub* site](https://GiveUpGitHub.org) for details.)
+
+You can now find MetricTree at [CodeBerg](https://codeberg.org/cristian.barbarosie/MetricTree) instead.
+
 # MetricTree
 
 MetricTree is a tiny C++ library for organizing hierarchically a cloud of points in 
